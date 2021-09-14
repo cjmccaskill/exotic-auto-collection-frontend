@@ -6,7 +6,7 @@ import "tailwindcss/tailwind.css";
 export default function Home({ autos }) {
   return (
     <div className="p-10">
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-5">
         {autos.map((auto) => (
           <Image url={auto.image.url} key={auto.id} />
         ))}
