@@ -1,16 +1,34 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+// import Image from "next/image";
+// import styles from "../styles/Home.module.css";
+import "tailwindcss/tailwind.css";
 
 export default function Home({ autos }) {
-  console.log({ autos });
-  return <div>
-    {autos.map((auto, index) => (
-      <div key={auto.id}>
-        <img src={`http://localhost:1337${auto.image.url}`}/>
+  return (
+    <div className="p-10">
+      <div className="grid grid-cols-3 gap-5">
+        {autos.map((auto) => (
+          <Image url={auto.image.url} key={auto.id} />
+        ))}
       </div>
-    ))}
-  </div>;
+    </div>
+  );
+}
+
+function Image({ url }) {
+  return (
+    <div>
+      {/* image itself */}
+      <div className="relative">
+        {/* image shadow */}
+        <div className="absolute h-full w-full -right-2 -bottom-2 bg-black rounded-lg transform hover:-translate-x-1  hover:-translate-y-1 transition"></div>
+        <img
+          src={`http://localhost:1337${url}`}
+          className="relative rounded-lg"
+        />
+      </div>
+    </div>
+  );
 }
 
 export async function getStaticProps() {
