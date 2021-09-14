@@ -1,34 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Overview
 
-## Getting Started
+## Project Links
 
-First, run the development server:
+- [Github Frontend](https://github.com/cjmccaskill/exotic-auto-collection-frontend)
+- [Deployed site]()
 
-```bash
-npm run dev
-# or
-yarn dev
+## Project Description
+
+For this project, I am building out an ecommerce site (Exotic Auto Collection) using Next.js(front-end) and Sanity(API). The idea behind the project is to build a site for sell high end hard to find luxury/exotic vehicles. The site will have multiple pages for showcasing current inventory and coming soon vehicles for sale. Along with contact page for more details on a certain vehicle.
+
+## API
+
+Here is a sample code snippet from the api that I built for this project.
+
+```
+SAMPLE CODE SNIPPET
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Wireframes
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Project wireframes](https://app.moqups.com/Ohpf16slpz/edit/page/a2a00afc0)
+- [Project architecture](https://wireframepro.mockflow.com/editor.jsp?editor=off&publicid=M10a195e6b98708c9eb648c8f50c84ddd1631300483206&projectid=M2c2fac4e009957396a73fb0641486d8b1627664733544&perm=Owner#/page/efdc352914ca4c2fa917770d69a519db/sidebar/off)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### MVP/PostMVP -
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### MVP EXAMPLE
 
-## Learn More
+- Landing page for the Site
+  - Header with a nav link
+  - Hero - with a button centered to see current inventory
+  - List of all available vehicles for sale
+  - Footer with contact / about / social links
+- Render data from the API to popluate the page with current inventory
+- Allow user to click on a selected vehicle that will link to a individual page
 
-To learn more about Next.js, take a look at the following resources:
+#### PostMVP EXAMPLE
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Add a Financing Option
+- Add Search input to search by year / make / model / feature...
+- Add the still hero image to video of cars
+- Add about author section/pop out component
+- Add a Show me the Carfax report for each vehicle
+- Add a payment calculator based off the selected vehicle
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Components
 
-## Deploy on Vercel
+| Component        |                             Description                             |
+| ---------------- | :-----------------------------------------------------------------: |
+| App              |    This will make the initial data pull and include React Router    |
+| Header           |             This will render the header include the nav             |
+| Footer           |             This will render the header include the nav             |
+| Hero             |                Landing page image on the landin page                |
+| List of Vehicles |     Will render the complete list of vehicles from the API call     |
+| Idv. Vehicle     | When a user selects a specific vehicle it will render on a new page |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Component             | Priority | Estimated Time | Actual Time |
+| --------------------- | :------: | :------------: | :---------: |
+| Design Structure      |    H     |      4hrs      |     hrs     |
+| APP                   |    H     |      3hrs      |     hrs     |
+| Header                |    H     |      2hrs      |     hrs     |
+| Footer                |    H     |      2hrs      |     hrs     |
+| Hero                  |    H     |      2hrs      |     hrs     |
+| List of Vehicles page |    H     |      3hrs      |     hrs     |
+| Idv vehicle page      |    H     |      3hrs      |     hrs     |
+| Purchase page         |    H     |      3hrs      |     hrs     |
+| Search component      |    H     |      2hrs      |     hrs     |
+| Working with API      |    H     |      3hrs      |     hrs     |
+| Styling content       |    H     |      4hrs      |     hrs     |
+| Debugging             |    H     |      3hrs      |     hrs     |
+| Total                 |    H     |     35hrs      |     hrs     |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Additional Libraries
+
+-Next.js
+-Styled with jsx
+-Formspree for form submissions
+
+## Code Snippet
+
+EXAMPLE OF CODE
+
+```
+
+```
