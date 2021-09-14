@@ -21,10 +21,10 @@ function Image({ url }) {
       {/* image itself */}
       <div className="relative">
         {/* image shadow */}
-        <div className="absolute h-full w-full -right-2 -bottom-2 bg-black rounded-lg transform hover:-translate-x-1  hover:-translate-y-1 transition"></div>
+        <div className="absolute h-full w-full -right-2 -bottom-2 bg-black rounded-lg"></div>
         <img
           src={`http://localhost:1337${url}`}
-          className="relative rounded-lg"
+          className="relative rounded-lg transform hover:translate-x-1 hover:translate-y-1 transition"
         />
       </div>
     </div>
