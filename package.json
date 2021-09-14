@@ -12,7 +12,9 @@
     "@tailwindcss/jit": "^0.1.18",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-dropzone": "^11.4.0",
+    "react-modal": "^3.14.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.4",
