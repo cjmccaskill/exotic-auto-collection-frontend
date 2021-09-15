@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { useDropzone } from "react-dropzone";
 
@@ -16,6 +16,7 @@ export default function UploadModal() {
   function closeModal() {
     setIsModalOpen(false);
   }
+
   return (
     <>
       {/* The button that will open modal */}
@@ -25,12 +26,13 @@ export default function UploadModal() {
       >
         Sell Your Auto
       </button>
+
       {/* Modal itself that will pop open */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        contentLabel="Example Modal"
-        className="absolute inset-0 bg-white border-gray-100 shadow-2xl m-20 mt-48 mb-48 md:m-48 p-10"
+        contentLabel="Upload Your Auto Modal"
+        className="absolute inset-0 top-20 right-20 bottom-20 left-20 bg-white border-gray-100 shadow-2xl p-10 rounded-lg"
         overlayClassName="fixed inset-0 bg-black bg-opacity-50"
       >
         <button
@@ -39,12 +41,13 @@ export default function UploadModal() {
         >
           Close X
         </button>
-        <div className="flex flex-col h-5/6">
-          <h2 className="flex-shrink  text-2xl md:text-4xl font-extrabold mb-7">
+
+        <div className="flex flex-col h-full">
+          <h2 className="flex-shrink text-2xl md:text-4xl font-extrabold mb-7">
             Upload Your Auto To Sale
           </h2>
           {/* Dropzone goes inside here */}
-          <UploadDropzone />
+          <UploadDropzone closeMe={closeModal} />
         </div>
       </Modal>
     </>
@@ -52,32 +55,78 @@ export default function UploadModal() {
 }
 
 function UploadDropzone(props) {
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+  const [files, setFiles] = useState([]);
+  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+    accept: "image/*",
+    onDrop(acceptedFiles) {
+      setFiles(
+        acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        )
+      );
+    },
+  });
 
-  const files = acceptedFiles.map((file) => (
-    <li key={file.path}>
-      {file.path} {/* - {file.size} bytes */}
-    </li>
-  ));
+  useEffect(
+    () => () => {
+      // Make sure to revoke the data uris to avoid memory leaks
+      files.forEach((file) => URL.revokeObjectURL(file.preview));
+    },
+    [files]
+  );
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("data", "{}");
+    formData.append("files.file", files[0], files[0].name);
+    fetch(
+      "https://exotic-auto-collection-backend-m6l5e.ondigitalocean.app/autos",
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then((result) => {
+      console.log(result);
+      console.log(props);
+      props.closeMe();
+    });
+  }
 
   return (
-    <>
+    <form className="h-full flex flex-col" onSubmit={handleSubmit}>
       {/* this is the dropzone */}
       <div
         {...getRootProps({
           className:
-            "flex-1 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg text-center bg-gray-100 cursor-pointer hover:bg-green-100 hover:border-green-500 hover:text-green-800 transition mb-5",
+            "relative flex-1 flex items-center justify-center border-2 border-dashed border-gray-200 rounded-lg px-10 py-5 text-center bg-gray-100 cursor-pointer hover:bg-green-100 hover:border-green-500 hover:text-green-800 transition mb-5",
         })}
       >
         <input {...getInputProps()} />
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         <p>Drag 'n' drop some files here, or click to select files</p>
+        <div className="absolute bottom-1">
+          {files.map((file) => (
+            <img
+              src={file.preview}
+              key={file.id}
+              alt=""
+              className="w-48 md:w-72 rounded-lg shadow-2xl"
+            />
+          ))}
+        </div>
       </div>
-      {/* list all the files */}
-      <aside>
-        <h4>Files</h4>
-        <ul>{files}</ul>
-      </aside>
-    </>
+
+      {/* submit button */}
+      <button
+        type="submit"
+        className=" mt-8 w-full bg-green-400 text-xl text-green-50 py-2 rounded-lg font-medium"
+      >
+        Upload
+      </button>
+    </form>
   );
 }
