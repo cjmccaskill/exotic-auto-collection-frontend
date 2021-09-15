@@ -1,4 +1,4 @@
-import { getStrapiMedia } from "../utils/medias";
+import { getStrapiMedia } from "../utils/media";
 import NextImage from "next/image";
 
 const Image = (props) => {

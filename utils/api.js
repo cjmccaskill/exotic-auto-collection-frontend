@@ -28,6 +28,6 @@ export async function getAutos() {
 }
 
 export async function getAuto(slug) {
-  const autos = await fetchAPI(`/auto?slug=${slug}`);
+  const autos = await fetchAPI(`/autos?slug=${slug}`);
   return autos?.[0];
 }
