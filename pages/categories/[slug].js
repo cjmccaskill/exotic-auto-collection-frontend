@@ -29,9 +29,9 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const categories = await getCategories();
   return {
-    paths: categories.map((_category) => {
+    paths: categories.map((category) => {
       return {
-        params: { slug: _category.slug },
+        params: { slug: category.slug },
       };
     }),
     fallback: true,
