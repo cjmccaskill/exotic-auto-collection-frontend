@@ -1,3 +1,5 @@
+import { getAutos } from "../utils/api";
+
 export default function Home({ autos }) {
   return (
     <div className="p-10">
