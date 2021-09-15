@@ -1,4 +1,5 @@
 import UploadModal from "./UploadModal";
+import Link from "next/link";
 
 export default function SiteHeader() {
   return (
@@ -9,9 +10,11 @@ export default function SiteHeader() {
       </a>
       <div>
         {/* right side of nav nav-link */}
-        <a href="" className="py-4 px-6 focus:text-green-400">
-          Login/Signup
-        </a>
+        <Link href="/">
+          <a href="" className="py-4 px-6 focus:text-green-400">
+            Login/Signup
+          </a>
+        </Link>
         <UploadModal />
       </div>
     </nav>

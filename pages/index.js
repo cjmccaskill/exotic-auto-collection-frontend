@@ -3,15 +3,14 @@ export default function Home({ autos }) {
     <div className="p-10">
       {autos.length > 0 ? (
         <div className="grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-5">
-          {autos.map(
-            (auto) =>
-              console.log(auto) || (
-                <Image url={auto.image.url} alt={auto.title} key={auto.id} />
-              )
-          )}
+          {autos.map((auto) => (
+            <Image url={auto.image.url} alt={auto.title} key={auto.id} />
+          ))}
         </div>
       ) : (
-        <div className="text-lg text-gray-400">Waiting for the seller...</div>
+        <div className="text-lg text-gray-400">
+          Loading current inventory...
+        </div>
       )}
     </div>
   );

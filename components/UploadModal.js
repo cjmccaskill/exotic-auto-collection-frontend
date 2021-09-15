@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { useDropzone } from "react-dropzone";
 
+
 // Bind modal to your appElement
 Modal.setAppElement("#__next");
 
@@ -89,9 +90,7 @@ function UploadDropzone(props) {
         method: "POST",
         body: formData,
       }
-    ).then((result) => {
-      console.log(result);
-      console.log(props);
+    ).then(() => {
       props.closeMe();
     });
   }
