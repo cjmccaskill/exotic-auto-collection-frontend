@@ -1,6 +1,5 @@
-import { getAutos } from "../utils/api";
-import Head from 'next/head'
-import VehiclesList from "../components/VehiclesList";
+import Head from "next/head";
+import Hero from "../components/Hero";
 
 export default function Home({ autos }) {
   return (
@@ -8,12 +7,8 @@ export default function Home({ autos }) {
       <Head>
         <title>Exotic Auto Collection</title>
       </Head>
-      <VehiclesList autos={autos} />
+      <Hero />
     </div>
   );
 }
 
-export async function getStaticProps() {
-  const autos = await getAutos();
-  return { props: { autos } };
-}
