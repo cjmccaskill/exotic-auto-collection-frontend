@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import VehiclesList from "../../components/VehiclesList";
 import { getCategories, getCategory } from "../../utils/api";
 
-const CategoryPage = ({ category }) => {
+export default function CategoryPage ({ category }) {
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading category...</div>;
@@ -19,7 +19,6 @@ const CategoryPage = ({ category }) => {
   );
 };
 
-export default CategoryPage;
 
 export async function getStaticProps({ params }) {
   const category = await getCategory(params.slug);

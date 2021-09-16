@@ -1,10 +1,10 @@
-import Head from "/head";
-import { useRouter } from "/router";
+import Head from "next/head";
+import { useRouter } from "next/router";
 import Image from "../../components/Image";
 import { getAutos, getAuto } from "../../utils/api";
 import { getStrapiMedia } from "../../utils/media";
 
-const AutoPage = ({ auto }) => {
+export default function AutoPage({ auto }) {
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading auto...</div>;
@@ -16,7 +16,7 @@ const AutoPage = ({ auto }) => {
         <title>{auto.title} auto</title>
       </Head>
       <div className="rounded-t-lg pt-2 pb-2 m-auto h-40 w-40">
-        <Image media={auto.image} alt={auto.title}/>
+        <Image media={auto.image} alt={auto.title} />
       </div>
       <div className="w-full p-5 flex flex-col justify-between">
         <div>
@@ -33,6 +33,7 @@ const AutoPage = ({ auto }) => {
             data-item-price={auto.price}
             data-item-url={router.asPath}
             data-item-description={auto.description}
+            data-item-specs={auto.specs}
             data-item-image={getStrapiMedia(auto.image.url)}
             data-item-name={auto.title}
             v-bind="customFields"
@@ -57,9 +58,7 @@ const AutoPage = ({ auto }) => {
       </div>
     </div>
   );
-};
-
-export default AutoPage;
+}
 
 export async function getStaticProps({ params }) {
   const auto = await getAuto(params.slug);

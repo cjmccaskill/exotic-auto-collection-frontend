@@ -1,7 +1,7 @@
 import { getStrapiMedia } from "../utils/media";
 import Image from "next/image";
 
-const VehicleImage = (props) => {
+export default function VehicleImage(props) {
   if (!props.media) {
     return <Image {...props} alt={"image of a vehicle"} />;
   }
@@ -23,6 +23,4 @@ const VehicleImage = (props) => {
       alt={alternativeText || ""}
     />
   );
-};
-
-export default VehicleImage;
+}

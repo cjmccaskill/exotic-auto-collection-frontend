@@ -4,7 +4,7 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import { getCategories } from "../utils/api";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <Layout categories={pageProps.categories}>
       <Head>
@@ -32,5 +32,3 @@ MyApp.getInitialProps = async (ctx) => {
   // Pass the data to our page via props
   return { ...appProps, pageProps: { categories, path: ctx.pathname } };
 };
-
-export default MyApp;

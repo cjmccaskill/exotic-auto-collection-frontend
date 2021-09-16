@@ -2,7 +2,7 @@ import CategoryButtons from "./CategoryButtons";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
 
-const Layout = ({ children, categories }) => {
+export default function Layout({ children, categories }) {
   return (
     <div className="flex justify-center bg-gray-200">
       <div className="max-w-screen-xl flex flex-col min-h-screen w-full">
@@ -14,10 +14,10 @@ const Layout = ({ children, categories }) => {
       <div
         hidden
         id="snipcart"
-        data-api-key="ODhhNWUxOGEtNTk0OC00OTQwLWJkOWMtM2M1ZmNjODU1ZDJhNjM3MzMyNzM0NjM1OTMyNjcz"
+        data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
       />
     </div>
   );
 };
 
-export default Layout;
+

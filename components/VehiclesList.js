@@ -1,8 +1,7 @@
 import Image from "./Image";
 import Link from "next/link";
 
-
-const VehiclesList = ({ autos }) => {
+export default function VehiclesList({ autos }) {
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 mt-4">
       {autos.map((auto) => (
@@ -21,7 +20,6 @@ const VehiclesList = ({ autos }) => {
                 <h4 className="mt-1 font-semibold text-base leading-tight truncate text-gray-700">
                   {auto.title}
                 </h4>
-               
               </div>
             </a>
           </Link>
@@ -29,41 +27,6 @@ const VehiclesList = ({ autos }) => {
       ))}
     </div>
   );
-};
+}
 
-// <div className="p-10">
-//   {autos.length > 0 ? (
-//     <div className="grid grid-col-1 md:grid-col-2 lg:grid-cols-3 gap-5">
-//       {autos.map((auto) => (
-//         <Link href={`/autos/${_auto.slug}`} key={auto.id}>
-//           <a>
-//             <autoImage url={auto.image.url} alt={auto.title} />
-//           </a>
-//         </Link>
-//       ))}
-//     </div>
-//   ) : (
-//     <div className="text-lg text-gray-400">
-//       Loading current inventory...
-//     </div>
-//   )}
-// </div>
 
-// function autoImage({ url }) {
-//   return (
-//     <div>
-//       {/* image itself */}
-//       <div className="relative">
-//         {/* image shadow */}
-//         <div className="absolute h-full w-full -right-2 -bottom-2 bg-black rounded-lg"></div>
-//         <img
-//           src={`http://localhost:1337${url}`}
-//           alt={""}
-//           className="relative rounded-lg transform hover:translate-x-1 hover:translate-y-1 transition"
-//         />
-//       </div>
-//     </div>
-//   );
-// }
-
-export default VehiclesList;

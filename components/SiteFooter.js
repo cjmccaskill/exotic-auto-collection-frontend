@@ -8,6 +8,7 @@ export default function SiteFooter() {
         <img
           src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg"
           alt="DigitalOcean Referral Badge"
+          className="rounded-lg w-32"
         />
       </a>
     </div>
