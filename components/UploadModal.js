@@ -45,7 +45,7 @@ export default function UploadModal() {
 
         <div className="flex flex-col h-full">
           <h2 className="flex-shrink text-2xl md:text-4xl font-extrabold mb-7">
-            Upload Your Auto To Sale
+            Upload Your Vehicle To Sale
           </h2>
           {/* Dropzone goes inside here */}
           <UploadDropzone closeMe={closeModal} />

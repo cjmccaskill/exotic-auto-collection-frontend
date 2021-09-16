@@ -1,9 +1,8 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-
-import NextImage from "../../components/Image";
+import Head from "/head";
+import { useRouter } from "/router";
+import Image from "../../components/Image";
 import { getAutos, getAuto } from "../../utils/api";
-import { getStrapiMedia } from "../../utils/medias";
+import { getStrapiMedia } from "../../utils/media";
 
 const AutoPage = ({ auto }) => {
   const router = useRouter();
@@ -17,7 +16,7 @@ const AutoPage = ({ auto }) => {
         <title>{auto.title} auto</title>
       </Head>
       <div className="rounded-t-lg pt-2 pb-2 m-auto h-40 w-40">
-        <NextImage media={auto.image} />
+        <Image media={auto.image} alt={auto.title}/>
       </div>
       <div className="w-full p-5 flex flex-col justify-between">
         <div>
@@ -34,7 +33,7 @@ const AutoPage = ({ auto }) => {
             data-item-price={auto.price}
             data-item-url={router.asPath}
             data-item-description={auto.description}
-            data-item-image={getStrapiMedia(auto.image.formats.thumbnail.url)}
+            data-item-image={getStrapiMedia(auto.image.url)}
             data-item-name={auto.title}
             v-bind="customFields"
           >
@@ -70,9 +69,9 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const autos = await getAutos();
   return {
-    paths: autos.map((_auto) => {
+    paths: autos.map((auto) => {
       return {
-        params: { slug: _auto.slug },
+        params: { slug: auto.slug },
       };
     }),
     fallback: true,

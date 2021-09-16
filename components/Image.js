@@ -1,9 +1,9 @@
 import { getStrapiMedia } from "../utils/media";
-import NextImage from "next/image";
+import Image from "next/image";
 
-const Image = (props) => {
+const VehicleImage = (props) => {
   if (!props.media) {
-    return <NextImage {...props} />;
+    return <Image {...props} alt={"image of a vehicle"} />;
   }
 
   const { url, alternativeText } = props.media;
@@ -13,10 +13,10 @@ const Image = (props) => {
   };
 
   return (
-    <NextImage
+    <Image
       loader={loader}
       layout="responsive"
-      objectFit="contain"
+      // objectFit="contain"
       width={props.media.width}
       height={props.media.height}
       src={url}
@@ -25,4 +25,4 @@ const Image = (props) => {
   );
 };
 
-export default Image;
+export default VehicleImage;
