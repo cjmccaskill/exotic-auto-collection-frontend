@@ -22,7 +22,7 @@ export default function UploadModal() {
       {/* The button that will open modal */}
       <button
         onClick={openModal}
-        className="py-1 px-4 bg-white text-gray-700 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500"
+        className="py-1 px-4 text-gray-200 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500"
       >
         Sell Your Auto
       </button>

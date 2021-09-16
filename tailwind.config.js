@@ -7,6 +7,7 @@ module.exports = {
   variants: {
     extend: {
       translate: ["group-hover"],
+      borderRadius: ["last"],
     },
   },
   plugins: [],
