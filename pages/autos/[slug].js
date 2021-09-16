@@ -15,15 +15,15 @@ export default function AutoPage({ auto }) {
       <Head>
         <title>{auto.title} auto</title>
       </Head>
-      <div className="rounded-t-lg pt-2 pb-2 m-auto h-40 w-40">
+      <div className="m-auto w-full">
         <Image media={auto.image} alt={auto.title} />
       </div>
       <div className="w-full p-5 flex flex-col justify-between">
         <div>
-          <h4 className="mt-1 font-semibold text-lg leading-tight truncate text-gray-700">
+          <h4 className="mt-1 pl-2 font-semibold text-lg leading-tight truncate text-gray-700">
             {auto.title} - ${auto.price}
           </h4>
-          <div className="mt-1 text-gray-600">{auto.description}</div>
+          <div className="mt-1 p-2 shadow-xl rounded border border-gray-300 text-gray-600">{auto.description}</div>
         </div>
 
         {auto.status === "published" ? (
@@ -43,14 +43,14 @@ export default function AutoPage({ auto }) {
         ) : (
           <div className="text-center mr-10 mb-1" v-else>
             <div
-              className="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+              className="mt-4 p-2 bg-green-800 items-center text-green-100 leading-none lg:rounded-full flex lg:inline-flex"
               role="alert"
             >
-              <span className="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">
+              <span className="flex rounded-full bg-green-500 uppercase px-2 py-1 text-xs font-bold mr-3">
                 Coming soon...
               </span>
               <span className="font-semibold mr-2 text-left flex-auto">
-                This article is not available yet.
+                This vehicle is not available yet.
               </span>
             </div>
           </div>
