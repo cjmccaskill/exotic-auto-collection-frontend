@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { useDropzone } from "react-dropzone";
 
-
 // Bind modal to your appElement
 Modal.setAppElement("#__next");
 
@@ -23,7 +22,7 @@ export default function UploadModal() {
       {/* The button that will open modal */}
       <button
         onClick={openModal}
-        className="py-1.5 px-4 bg-white text-gray-700 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800"
+        className="py-1 px-4 bg-white text-gray-700 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500"
       >
         Sell Your Auto
       </button>
@@ -84,13 +83,10 @@ function UploadDropzone(props) {
     const formData = new FormData();
     formData.append("data", "{}");
     formData.append("files.file", files[0], files[0].name);
-    fetch(
-      "https://exotic-auto-collection-backend-m6l5e.ondigitalocean.app/autos",
-      {
-        method: "POST",
-        body: formData,
-      }
-    ).then(() => {
+    fetch("http://localhost:1337/autos", {
+      method: "POST",
+      body: formData,
+    }).then(() => {
       props.closeMe();
     });
   }

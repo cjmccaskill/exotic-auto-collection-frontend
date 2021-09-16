@@ -15,7 +15,7 @@ export default function SiteHeader() {
         <UploadModal />
         {/* The button that will open shopping cart */}
         <button
-          className="snipcart-checkout ml-2 -mr-8 py-1.5 px-4 bg-white text-gray-700 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800"
+          className="snipcart-checkout ml-2 -mr-8 py-1 px-4 bg-white text-gray-700 rounded-full border-transparent border-2 hover:border-green-500 hover:shadow-inner focus:outline-none focus:bg-green-400 focus:text-gray-800"
         >
           Purchase
         </button>
