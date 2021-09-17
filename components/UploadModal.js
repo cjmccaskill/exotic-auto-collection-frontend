@@ -83,10 +83,13 @@ function UploadDropzone(props) {
     const formData = new FormData();
     formData.append("data", "{}");
     formData.append("files.file", files[0], files[0].name);
-    fetch("http://localhost:1337/autos", {
-      method: "POST",
-      body: formData,
-    }).then(() => {
+    fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"}`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    ).then(() => {
       props.closeMe();
     });
   }
