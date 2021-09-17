@@ -18,7 +18,7 @@ export default function AutoPage({ auto }) {
         <title>{auto.title} auto</title>
       </Head>
       <Link href="/autos/currentinventory" passHref>
-        <button className="text-sm font-bold mx-4 rounded-full py-1 px-2 flex items-bottom hover:text-green-400 hover:bg-black hover:bg-opacity-80 hover:shadow-sm w-auto">
+        <button className="text-sm font-bold mx-4 mt-2 rounded-full py-1 px-2 flex items-bottom hover:text-green-400 hover:bg-black hover:bg-opacity-80 hover:shadow-sm w-auto">
           <TiArrowLeftOutline className="text-xl mr-1" />
           Back to inventory
         </button>
