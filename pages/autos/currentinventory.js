@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { getAutos } from "../../utils/api";
+import { getAutos, getCategories } from "../../utils/api";
 import VehiclesList from "../../components/VehiclesList";
 import CategoryButtons from "../../components/CategoryButtons";
 
@@ -23,5 +23,6 @@ export default function CurrentInventory({ autos, categories }) {
 
 export async function getStaticProps() {
   const autos = await getAutos();
-  return { props: { autos } };
+  const categories = await getCategories()
+  return { props: { autos, categories } };
 }
