@@ -1,5 +1,4 @@
 import Link from "next/link";
-import FinanceForm from "./FinanceForm";
 
 export default function SiteHeader() {
   return (
@@ -21,7 +20,14 @@ export default function SiteHeader() {
             Inventory
           </a>
         </Link>
-        <FinanceForm />
+        {/* The button that will open finance form */}
+        <Link href="/financeform" passHref>
+          <button
+            className="py-1 px-4 text-gray-200 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500"
+          >
+            Financing
+          </button>
+        </Link>
         {/* The button that will open shopping cart */}
         <button className="snipcart-checkout lg:-mr-8 py-1 px-4 text-gray-200 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500">
           Purchase
