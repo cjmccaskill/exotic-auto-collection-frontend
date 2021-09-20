@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <Hero />
       {/* welcome banner */}
-      <section className="flex flex-col justify-center items-center text-center py-9 px-5">
+      <section className="flex flex-col justify-center items-center text-center py-9 px-5 bg-white">
         <div className="text-2xl uppercase">
           welcome to exotic auto collection
         </div>
