@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       <div
         hidden
         id="snipcart"
-        data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
+        data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
       />
     </div>
   );
