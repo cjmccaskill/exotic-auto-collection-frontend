@@ -56,7 +56,7 @@ export default function UploadModal() {
 
 function UploadDropzone(props) {
   const [files, setFiles] = useState([]);
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop(acceptedFiles) {
       setFiles(
