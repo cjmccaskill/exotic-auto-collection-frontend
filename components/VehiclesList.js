@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function VehiclesList({ autos }) {
-  console.log("Vehicle List", autos);
   return (
     <div className="m-6 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2 mt-4">
       {autos &&

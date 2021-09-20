@@ -14,7 +14,7 @@ export default function AutoPage({ auto }) {
   return (
     <>
       <Head>
-        <title>{auto.title} auto</title>
+        <title>{auto.title}</title>
       </Head>
       <Link href="/autos/currentinventory" passHref>
         <button className="text-sm font-bold mx-4 mt-2 rounded-full py-1 px-2 flex items-bottom hover:text-green-400 hover:bg-black hover:bg-opacity-80 hover:shadow-sm w-auto">
