@@ -4,7 +4,7 @@ import SiteHeader from "./SiteHeader";
 export default function Layout({ children }) {
   return (
     <div className="flex justify-center bg-gray-200">
-      <div className="max-w-screen-xl flex flex-col min-h-screen w-full">
+      <div className="flex flex-col min-h-screen w-full">
         <SiteHeader />
         <div className="flex-grow">{children}</div>
         <SiteFooter />
@@ -12,7 +12,7 @@ export default function Layout({ children }) {
       <div
         hidden
         id="snipcart"
-        data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
+        data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
       />
     </div>
   );

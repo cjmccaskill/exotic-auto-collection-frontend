@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Link from "next/link";
+import Finance from "../components/FinanceBanner";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           Chicago, Nashville, and beyond.
         </div>
       </section>
+      <Finance />
     </div>
   );
 }
