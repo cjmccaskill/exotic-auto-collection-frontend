@@ -8,6 +8,11 @@ export default function Layout({ children }) {
         <SiteHeader />
         <div className="flex-grow">{children}</div>
         <SiteFooter />
+        <div
+          hidden
+          id="snipcart"
+          data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
+        />
       </div>
     </div>
   );

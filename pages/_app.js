@@ -18,11 +18,6 @@ export default function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-      <div
-        hidden
-        id="snipcart"
-        data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
-      />
     </Layout>
   );
 }
