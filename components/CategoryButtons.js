@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CategoryButtons({ categories = [] }) {
   return (
-    <div className=" container flex justify-center flex-wrap mx-auto mt-4">
+    <div className="container flex justify-center flex-wrap mx-auto mt-4">
       <div className="bg-white active:bg-green-400 text-gray-800 font-semibold py-1 pl-4 pr-3 border border-gray-400 hover:shadow-lg shadow-md rounded-l-xl">
         Categories -
       </div>
