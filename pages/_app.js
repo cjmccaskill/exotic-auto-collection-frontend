@@ -13,11 +13,16 @@ export default function MyApp({ Component, pageProps }) {
           href="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.css"
         />
         <script
-        async
-        src="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js"
-      />
+          async
+          src="https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js"
+        />
       </Head>
       <Component {...pageProps} />
+      <div
+        hidden
+        id="snipcart"
+        data-api-key="N2RkYTZiMzgtMmNiYS00YThjLWFhYjAtZWVjODI3YTYyYWY0NjM3NjczMzkyNjAxMTUyOTgw"
+      />
     </Layout>
   );
 }
