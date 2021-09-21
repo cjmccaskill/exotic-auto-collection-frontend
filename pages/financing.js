@@ -43,6 +43,7 @@ export default function FinanceForm() {
       className="relative flex-1 h-full flex flex-col border-2 border-gray-200 rounded-lg px-10 py-5 text-left bg-gray-100 transition m-auto sm:mx-20 xl:mx-44 overflow-y-scroll"
       onSubmit={formSubmit}
     >
+      <div className='uppercase text-xl mb-8 font-normal'>apply for financing</div>
       <div className="text-lg font-semibold border-b-2 border-gray-300 mb-4">
         Let&apos;s get started{" "}
         <span className="text-xs font-extralight">* Required Fields</span>

@@ -42,7 +42,7 @@ export default function AutoPage({ auto }) {
             </div>
           </div>
           <button
-              className="snipcart-add-item hover:shadow-lg font-semibold p-1 rounded-full shadow mt-4 mx-auto bg-green-800 items-center text-green-100 leading-none flex lg:inline-flex text-xl w-3/6 "
+              className="snipcart-add-item focus:bg-gray-300 focus:outline-none bg-gray-800 text-gray-100 focus:text-gray-800 font-medium text-sm py-1 px-1 border border-gray-400 hover:shadow-lg shadow-md transform hover:translate-x-0.5 hover:translate-y-0.5 transition-200 rounded uppercase min-w-sm max-w-md mx-auto mt-2"
               data-item-id={auto.id}
               data-item-price={auto.price}
               data-item-url={router.asPath}
@@ -52,7 +52,7 @@ export default function AutoPage({ auto }) {
               data-item-name={auto.title}
               v-bind="customFields"
             >
-              <span className="flex justify-center rounded-full bg-green-500 uppercase px-2 py-1 font-bold
+              <span className="flex justify-center rounded bg-gray-700 uppercase p-1 font-bold text-white
                w-full">
               Add to cart
               </span>
