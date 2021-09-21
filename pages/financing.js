@@ -25,7 +25,7 @@ export default function FinanceForm() {
     Object.entries(query).forEach(([key, value]) => {
       formData.append(key, value);
     });
-    fetch("https://getform.io/{your-form-endpoint}", {
+    fetch(process.env.NEXT_PUBLIC_STRAPI_API_URL, {
       method: "POST",
       body: formData,
     }).then(() =>
