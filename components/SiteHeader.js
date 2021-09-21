@@ -7,7 +7,7 @@ export default function SiteHeader() {
       <Link href="/">
         <a
           href=""
-          className="font-extrabold text-lg md:text-xl text-white hover:text-green-300 hover:underline transform hover:scale-105 py-1 md:px-4"
+          className="font-extrabold text-xl xl:text-2xl text-white hover:text-green-300 hover:underline transform hover:scale-105 py-1 md:px-4"
         >
           Exotic Auto Collection
         </a>

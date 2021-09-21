@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute bg-black bg-opacity-30 inset-0 flex flex-col place-content-center text-center text-white uppercase">
       <div>Your Premier Source For Exotic Vehicles</div>
         <Link href="/autos/currentinventory">
-          <a className="hover:bg-black hover:bg-opacity-40 hover:border-green-400 border-2 border-white mt-4 mx-auto py-4 px-8 ">
+          <a className="hover:bg-black hover:bg-opacity-40 hover:border-green-400 border-2 border-white mt-4 mx-auto py-1 px-4 md:py-4 md:px-8 ">
             Shop Inventory
           </a>
         </Link>
