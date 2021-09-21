@@ -102,7 +102,7 @@ export default function AutoPage({ auto }) {
 
 export async function getStaticProps({ params }) {
   const auto = await getAuto(params.slug);
-  return { props: { auto }, revalidate: 1 };
+  return { props: { auto } };
 }
 
 export async function getStaticPaths() {
@@ -113,6 +113,6 @@ export async function getStaticPaths() {
         params: { slug: auto.slug },
       };
     }),
-    fallback: true,
+    fallback: false,
   };
 }
