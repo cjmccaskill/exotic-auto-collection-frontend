@@ -12,7 +12,7 @@ export default function Finance() {
         but we will ship our vehicles wherever you are, from Los Angeles to
         Miami to Dallas, Chicago, Nashville, and beyond.
       </div>
-      <Link href="/financeform" passHref>
+      <Link href="/financing" passHref>
         <button className="focus:bg-gray-300 focus:outline-none bg-gray-800 text-gray-100 focus:text-gray-800 font-medium text-sm py-3 px-7 border border-gray-400 hover:shadow-lg shadow-md transform hover:translate-x-0.5 hover:translate-y-0.5 transition-200 rounded uppercase">
           apply today
         </button>

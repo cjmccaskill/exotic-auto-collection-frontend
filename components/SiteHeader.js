@@ -21,7 +21,7 @@ export default function SiteHeader() {
           </a>
         </Link>
         {/* The button that will open finance form */}
-        <Link href="/financeform" passHref>
+        <Link href="/financing" passHref>
           <button
             className="py-1 px-4 text-gray-200 rounded-full focus:outline-none focus:bg-green-400 focus:text-gray-800 border-transparent border-2 hover:border-green-500"
           >

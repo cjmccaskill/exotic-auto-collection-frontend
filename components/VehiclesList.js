@@ -13,7 +13,7 @@ export default function VehiclesList({ autos }) {
             <Link href={`/autos/${auto.slug}`}>
               <a>
                 <div className="w-full bg-white">
-                  <div className="rounded-t-lg mx-auto">
+                  <div className="rounded-lg mx-auto">
                     <Image
                       src={auto.image[0].url}
                       layout="responsive"
@@ -23,7 +23,7 @@ export default function VehiclesList({ autos }) {
                     />
                   </div>
                 </div>
-                <div className="pl-4 pr-4 pb-4 pt-4 rounded-lg">
+                <div className="pl-4 pr-4 pb-4 pt-4 rounded-b-lg">
                   <h4 className="mt-1 font-semibold text-base leading-tight truncate text-gray-700">
                     {auto.title}
                   </h4>
