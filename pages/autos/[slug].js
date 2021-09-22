@@ -39,40 +39,34 @@ export default function AutoPage({ auto }) {
           Back to inventory
         </button>
       </Link>
-      <div className="m-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-        <section className="relative ">
-          <div className="absolute inset-0 flex flex-col place-content-center">
-            <div className="relative">
-              {auto.image.map((img, index) => (
-                <div
-                  className={`w-full relative ${
-                    index === current ? "img.active" : "img"
-                  }`}
-                  key={img.id}
-                >
-                  {index === current && (
-                    <Image
-                      src={img.url}
-                      layout="responsive"
-                      width={img.width}
-                      height={img.height}
-                      alt={auto.title}
-                    />
-                  )}
-                </div>
-              ))}
-              <FaArrowAltCircleLeft
-                className="absolute top-1/2 left-4 z-10 cursor-pointer text-3xl text-gray-400 hover:text-gray-200 text-opacity-40"
-                onClick={prevSlide}
-              />
-              <FaArrowAltCircleRight
-                className="absolute top-1/2 right-4 z-10 cursor-pointer text-3xl text-gray-400 hover:text-gray-200 text-opacity-40"
-                onClick={nextSlide}
-              />
+      <div className="m-6 flex flex-col lg:flex-row gap-4 max-w-7xl xl:mx-auto">
+        <div className="relative flex flex-col w-full max-w-2xl m-auto">
+          {auto.image.map((img, index) => (
+            <div
+              className={` ${index === current ? "img.active" : "img"}`}
+              key={img.id}
+            >
+              {index === current && (
+                <Image
+                  src={img.url}
+                  layout="responsive"
+                  width={img.width}
+                  height={img.height}
+                  alt={auto.title}
+                />
+              )}
             </div>
-          </div>
-        </section>
-        <div className="w-full p-5 flex flex-col justify-between">
+          ))}
+          <FaArrowAltCircleLeft
+            className="absolute top-1/2 left-4 cursor-pointer text-3xl text-gray-400 hover:text-gray-200 text-opacity-40"
+            onClick={prevSlide}
+          />
+          <FaArrowAltCircleRight
+            className="absolute top-1/2 right-4 cursor-pointer text-3xl text-gray-400 hover:text-gray-200 text-opacity-40"
+            onClick={nextSlide}
+          />
+        </div>
+        <div className="w-full mx-auto max-w-xl flex flex-col justify-between">
           <div>
             <h4 className="mt-1 pl-2 font-semibold text-lg leading-tight truncate text-gray-700">
               {auto.title} - ${auto.price}
