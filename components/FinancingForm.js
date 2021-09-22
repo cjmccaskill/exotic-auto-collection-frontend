@@ -65,17 +65,16 @@ export default function FinanceForm() {
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
       <div>
-        <label>Phone*</label>
+        <label>Phone</label>
         <input
           type="text"
           name="phone"
-          required
           placeholder="Phone"
           className="form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md w-full"
         />
       </div>
       <div>
-        <label>Zip Code*</label>
+        <label>Zip Code</label>
         <input
           type="text"
           name="zipcode"
@@ -83,10 +82,10 @@ export default function FinanceForm() {
           className="form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md w-full"
         />
       </div>
-      <legend>Locale*</legend>
+      <legend>Locale</legend>
       <div className="flex justify-between flex-wrap mt-2 sm:mt-0">
-        <input type="text" name="city" placeholder="City" required="" className="w-full sm:w-4/6 form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md"/>
-        <select name="state" required="" className="form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md">
+        <input type="text" name="city" placeholder="City" className="w-full sm:w-4/6 form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md"/>
+        <select name="state" className="form-control cursor-pointer pl-2 mt-2 mb-2 text-sm h-8 rounded-md">
           <option value="Select" selected="" disabled="">
             State
           </option>
